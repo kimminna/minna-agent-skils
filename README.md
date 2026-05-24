@@ -13,6 +13,7 @@
 | [pull-request](skills/pull-request/SKILL.md) | WHY 중심 PR 본문 작성 | "PR 만들어줘", "pull request" |
 | [code-review](skills/code-review/SKILL.md) | findings-first 심각도 기반 코드 리뷰 | "코드 리뷰해줘", "review" |
 | [doc-writer](skills/doc-writer/SKILL.md) | README/설계문서/ADR 작성 | "문서 만들어줘", "README" |
+| [issue-workflow](skills/issue-workflow/SKILL.md) | GitHub 이슈 생성 + 브랜치 자동 생성 | "/issue", "이슈 만들어줘" |
 
 ## 프로젝트에 연결하는 법
 
@@ -52,13 +53,30 @@ minna-agent-skils/
 │   ├── atomic-commit/SKILL.md
 │   ├── pull-request/SKILL.md
 │   ├── code-review/SKILL.md
-│   └── doc-writer/SKILL.md
+│   ├── doc-writer/SKILL.md
+│   └── issue-workflow/SKILL.md
 └── snippets/           ← CLAUDE.md / AGENTS.md에 붙여 쓸 연결 조각
     ├── atomic-commit.md
     ├── pull-request.md
     ├── code-review.md
-    └── doc-writer.md
+    ├── doc-writer.md
+    └── issue-workflow.md
 ```
+
+## 팀 프로젝트에서 같은 스킬 재사용하는 법
+
+SKILL.md 파일을 복사하지 않는다. 이 레포 하나를 유지하면서, 팀 프로젝트의 `CLAUDE.md`에 경로만 연결한다.
+
+```markdown
+## Project Skills
+
+내 스킬 레포: C:/Users/user/Desktop/minna-agent-skils  ← 절대 경로 그대로
+
+- 이슈 생성 요청 → skills/issue-workflow/SKILL.md 지시 따름
+- 커밋 요청 → skills/atomic-commit/SKILL.md 지시 따름
+```
+
+**팀원들과 공유하고 싶으면**: 이 레포를 GitHub에 올리고 각자 clone한 뒤 clone 경로를 지정하면 된다. SKILL.md 자체를 각 프로젝트 레포에 복사하면 나중에 수정할 때 여러 곳을 고쳐야 하므로 하지 않는다.
 
 ## 스킬 추가하는 법
 
